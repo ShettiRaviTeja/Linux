@@ -69,3 +69,5 @@
     - Syntax: (find) (path) (condition) -exec (command) {} \;
     - {} represents the currently matched file.
     - \; represents the end of the command.
+  - -exec with + : Instead of executing the command separately for each file, + passes multiple matching files together when possible.
+    - find . -name "*.txt" -exec ls -l {} +
