@@ -103,4 +103,12 @@
 
 - jq : Used to parse, filter, extract and transform JSON data from files or command output.
   - jq '.' employees.json : Displaying JSON data
-  - 
+  - jq '.name' employees.json : Extract a particular value
+  - jq '.name, .role' employees.json
+  - jq -r '.name' employees.json : Raw string without quotation marks.
+  - jq '.[] | select(.salary > 35000)' employees.json : Filter records based on a condition when the json file contains an array.
+
+## One important distinction: cut, awk, and jq can all extract data, but they work with different data formats and structures:
+## - cut → Simple delimited text.
+## - awk → Structured text processing and calculations.
+## - jq → JSON data processing.
