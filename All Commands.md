@@ -102,3 +102,5 @@
   - awk -F ',' '{print $2}' employees.csv
 
 - jq : Used to parse, filter, extract and transform JSON data from files or command output.
+  - jq '.' employees.json : Displaying JSON data
+  - 
