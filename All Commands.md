@@ -53,5 +53,52 @@
 
 # Filters
 - Filters are commands that take input from standard input (stdin), process it, and send the modified output to standard output (stdout). They are commonly used in pipelines to transform or extract specific data from a stream of text.
+
 - cat: Displays the text of the file line by line.
 - sort: Sort the lines alphabetically by default but there are many options available to modify the sorting mechanism.
+- tee : The tee command reads input and sends it to two places simultaneously:
+  1. Displays the output on the terminal
+  2. Writes the output into a file
+  - Example: ls | tee output.txt
+  - Append instead of overwrite: ls | tee -a output.txt
+- grep - Used to search for specific words or patterns in files or command output
+  - -i : Ignore uppercase and lowercase
+  - -n : Displays matching lines along with their line numbers.
+- cut : Used to extract specific fields or characters from each line of a file.
+  - -d : delimiter
+  - -f : field
+  - Example: cut -d ',' -f 2 employees.csv
+- tr : Used to translate, replace or delete characters from input.
+  - Example 1: echo "hello world" | tr 'a-z' 'A-Z'
+  - Example 2: echo "hello world" | tr ' ' '_'
+  - Example 3: echo "hello123" | tr -d '0-9'
+- wc : Used to count lines, words, characters, and bytes in a file.
+  - -l: Counts lines
+  - -w: Counts words
+  - -c: Counts bytes
+  - -m: Counts characters
+- sort : Used to arrange lines in alphabetical or numerical order.
+  - sort -n numbers.txt : Sort based on numerical values.
+  - sort -r numbers.txt : Sort in descending order.
+  - sort -n numbers.txt -o sorted.txt : Sorts the numbers and saves the result in sorted.txt
+  - -u : Removes duplicates lines while sorting.
+  - -f : Ignores case differences
+- uniq : Used to identify or remove consecutive duplicate lines.
+  - Example: uniq names.txt
+  - uniq -c names.txt : Count repeated lines
+  - uniq -d names.txt : Display only duplicate lines
+- sed : Stream Editor is used to search, replace, delete, and modify text in a stream or file.
+  - sed 's/Hello/Hi/' file.txt : Replace the single occurence
+  - sed 's/Hello/Hi/g' file.txt : Replace all occurences
+  - sed '2d' file.txt : Delete the 2nd line
+  - sed -i 's/Hello/Hi/g' file.txt : -i modifies original file directly.
+- Pipe (|) : Used to send the output of one command as the input to another command
+
+- awk : Powerful text-processing tool used to extract columns, filter records and perform calculations.
+  - awk '{print $2}' employees.txt
+  - awk '{print $1, $2}' employees.txt
+  - awk '$3 > 35000' employees.txt
+  - awk '{sum += $3} END {print sum}' employees.txt
+  - awk -F ',' '{print $2}' employees.csv
+
+- jq : Used to parse, filter, extract and transform JSON data from files or command output.
