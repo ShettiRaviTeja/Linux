@@ -239,4 +239,14 @@
 - -9 : Maximum compression : Uses more compression effort to achieve a smaller file size, usually taking more time.
 - -l : List compressed file information : Displays info about a compressed file.
 
-## G. 
+## G. gunzip : Decompress files
+- Used to decompress files that were compressed using gzip.
+- Syntax : gunzip [OPTIONS] filename.gz
+
+### Important flags of gunzip
+- -k : Keep the compressed file
+- -c : Write output to standard output
+- -r : Decompress files recursively
+- -v : Verbose mode : Displays detailed info about the decompression process.
+- -f : Force decompression even when the destination file already exists or the file has an unusual extension.
+- -l : List compressed file info without extracting it.
