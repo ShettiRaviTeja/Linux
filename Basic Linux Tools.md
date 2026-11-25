@@ -250,3 +250,27 @@
 - -v : Verbose mode : Displays detailed info about the decompression process.
 - -f : Force decompression even when the destination file already exists or the file has an unusual extension.
 - -l : List compressed file info without extracting it.
+
+## H. zip : Archive files
+- Combines and compresses multiple files and directories into a single .zip archive.
+### Important zip flags
+- -r : Compress directories recursively
+- -u : Update existing archive entries
+- -d : Delete files from an existing archive
+- -m : Move files into the archive and delete originals after successful addition.
+- -v : Display detailed information
+- -9 : Use maximum compression effort
+- -1 : Use fastest compression
+
+## I. unzip : Extract files
+- Command used to extract files and directories from a ZIP archive (.zip)
+- Syntax : unzip [OPTIONS] archive_name.zip
+### Important unzip flags
+- -l : List files inside the zip archive
+- -d : Extract into a specific directory
+- -o : Overwrite existing files automatically
+- -n : Never overwrite existing files
+- -j : Extract files without directory structure
+- -q : Quiet mode : Extract files without displaying unnecessary messages.
+- -v : Verbose mode : Displays detailedd information about the ZIP archive.
+- -t : Test ZIP archive integrity : Checks whether the ZIP archive is valid and whether its contents can be decompressed successfully, without extracting the files.
