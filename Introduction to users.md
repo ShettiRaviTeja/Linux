@@ -28,3 +28,20 @@
 - -r : Display current run level
 ## id 
 - Displays user ID, group ID and group memberships
+- In simple words, it tells us who the user is and which groups the user belongs to.
+### Important options of id
+- -u : Display only UID
+- -g : Display the numerical ID of the user's primary group
+- -G : Displays the numerical IDs of all groups the user belongs to
+- -n : The option -n is used with -u, -g, or -G to display names instead of numerical IDs.
+- -r : Display real ID instead of effective ID. Also used with -u and -g.
+- root : Check another user's information.
+
+## su -Switch User
+- It is used to switch from your current Linux user account to another user account.
+- su username : This will switch to another user without starting a full login environment.
+- su - username : This will switch to another user and loads the full login environment.
+
+## visudo
+- visudo is used to edit the /etc/sudoers file, which controls which users or groups are allowed to execute commands with administrative privileges using sudo.
+- To add the user to get the permissions : username ALL=(ALL:ALL) ALL
