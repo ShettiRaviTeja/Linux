@@ -96,3 +96,69 @@
   - grub/ : GRUB bootloader configuration and related files
   - System.map : Symbol table associated with the kernel
 - Practical commands
+  - ls -lh /boot : List the contents of /boot.
+  - uname -r : Check the currently running kernel version.
+  - ls /boot/vmlinuz* : List installed kernel images.
+
+### /dev directory
+- /dev stands for Devices.
+- It contains special files that represent hardware devices and virtual devices.
+- Important examples:
+  - /dev/null : Discards anything written to it.
+  - /dev/zero : Produces continuous zero bytes.
+  - /dev/random : Provides random bytes.
+  - /dev/tty : Represents the current terminal.
+
+### /etc directory
+- /etc contains system-wide configuration files.
+- Important files:
+  - /etc/passwd : Stores user account information
+  - /etc/shadow : Stores password hashes and password aging information
+  - /etc/group : Stores group information.
+  - /etc/hostname : Contains the system hostname.
+  - /etc/hosts : Maps hostnames to IP addresses.
+
+### /home
+- /home directory contains personal directories belonging to normal users.
+- Important commands:
+  - echo $HOME : Check your current home directory.
+  - cd ~ : Navigate to your home directory.
+  - ls /home : List all user home directories.
+
+### /lib
+- It stands for Libraries.
+- It contains essential shared library files required by basic system commands and programs.
+- Important contents:
+  - /lib : Essential shared libraries
+  - /lib/modules : Kernel modules.
+  - /lib/firmware : Firmware files
+
+## Mounting and Unmounting file systems
+- Mounting : It is the process of making a filesystem accessible to the Linux operating system by attaching it to a directory.
+- In simple words, mounting allows us to access the files stored on a disk, partition, USB drive, or other storage device.
+### What is Mount Point
+- A mount point is a directory in the Linux filesystem where another filesystem is attached.
+- For example, /mnt/usb contains files which are accessed by the linux system using USB. Then it is called as Mount point.
+### How to identify Disks and Partitions?
+- Before mounting a filesystem, we need to identify the storage device and its partitions.
+- lsblk : Displays block devices such as hard disks, SSDs and their partitions.
+### How to Mount a Filesystem
+- Suppose
+  - Device: /dev/sdb1
+  - Mount Point: /mnt/usb
+1. Create a mount point
+   - sudo mkdir /mnt/usb
+2. Identify the filesystem
+   - lsblk -f
+3. Mount the filesystem
+   - sudo mount /dev/sdb1 /mnt/usb
+4. Verify the mount
+   - df -h or lsblk
+   - You should see /mnt/usb as the mount point.
+5. Access the files
+   - cd /mnt/usb
+   - ls
+### How to Unmount a Filesystem?
+- Unmounting is the process of safely detaching a mounted filesystem from the Linux directory structure.
+- Command: sudo umount /mnt/usb
+- We can unmount using the device name or mount point name.
