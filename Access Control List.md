@@ -16,6 +16,7 @@
 ## 3. Remove an ACL entry
 - We use setfacl -x to remove a specific ACL entry.
 - Syntax: setfacl -x u:john:rw employees.txt
+- -b : Used to remove all the ACL entries : setfacl -b file.txt
 
 ## 4. ACL Mask
 - The ACL mask defines the maximum effective permissions available to:
@@ -24,3 +25,4 @@
   - Named groups (additional groups)
 - In simple words, even if you assign higher permissions to a user or group, the ACL mask can restrict their effective permissions.
 - The ACL mask applies to the owning group, named users and named groups, but not to the file owner or others.
+- How to set ACL mask : setfacl -m m:username:permissions
